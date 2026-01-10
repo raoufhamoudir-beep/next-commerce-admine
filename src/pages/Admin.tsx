@@ -1,6 +1,6 @@
 import { useUser } from '@/features/auth/hooks/useUser';
 import type { UserStore } from '@/types'; // Ensure this type is defined in your project
-import { Plus, Store, ArrowRight, Bell, Settings, Search } from 'lucide-react';
+import { Plus, Store, ArrowRight, Bell, Settings } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Admin = () => {

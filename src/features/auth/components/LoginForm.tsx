@@ -3,12 +3,11 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
 import { Loader2 } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Toaster, toast } from "react-hot-toast";
 import { api } from "@/lib/axios"; // ✅ الآن موجود
 import { loginSchema, type LoginFormValues } from "../types/schema";
 const LoginForm = () => {
-  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
 
   // إعداد الفورم

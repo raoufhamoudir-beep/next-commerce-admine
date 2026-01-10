@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { ArrowLeft, Store, Globe, Loader2, CheckCircle2, Upload, Palette, Image as ImageIcon, X } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom';
+import { ArrowLeft, Store, Globe, Loader2, CheckCircle2, Upload, Palette, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 // --- 1. Updated Zod Schema ---
 // We allow logo to be any (File) for the form, but in a real app you'd upload it to S3/Cloudinary first.
@@ -29,7 +29,6 @@ const BRAND_COLORS = [
 ];
 
 const CreateStore = () => {
-  const navigate = useNavigate();
   const [logoPreview, setLogoPreview] = useState<string | null>(null);
   const [isSubdomainTouched, setIsSubdomainTouched] = useState(false);
 
@@ -38,7 +37,7 @@ const CreateStore = () => {
     handleSubmit,
     watch,
     setValue,
-    formState: { errors, isSubmitting, isValid },
+    formState: { errors, isSubmitting },
   } = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
